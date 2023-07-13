@@ -1,0 +1,16 @@
+program Pat_u;
+
+uses
+  Vcl.Forms,
+  Main_u in 'Main_u.pas' {frmMain},
+  dm_u in 'dm_u.pas' {dm: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmMain, frmMain);
+  Application.CreateForm(Tdm, dm);
+  Application.Run;
+end.

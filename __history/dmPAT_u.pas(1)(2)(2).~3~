@@ -1,0 +1,51 @@
+unit dmPAT_u;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, db, adodb;
+
+type
+  TdmPAT = class(TDataModule)
+    procedure DataModuleCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  dmPAT: TdmPAT;
+  conPAT: TADOConnection;
+  { Copy en pase vir jou tables en rename }
+  tbTable: TADOTable;
+  dscTable: TDataSource;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+{$R *.dfm}
+
+procedure TdmPAT.DataModuleCreate(Sender: TObject);
+Var
+
+begin
+  conPAT.Close;
+  conPAT.ConnectionString := 'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=' +
+    ExtractFilePath(ParamStr(0)) + 'PAT.mdb' + '; Persist Security Info=False';
+  conPAT.LoginPrompt := False;
+
+  conPAT.Open;
+
+  { Copy en Paste vir elke tabel. Verander Tabel na jou tabel naam }
+  tbTable.Active := False;
+  tbTable.Connection := conPAT;
+  tbTable.TableName := ''; // Jou tabel naam in databasis
+  tbTable.Active := true;
+  dscTable.DataSet := tbTable;
+
+
+
+end;
+
+end.

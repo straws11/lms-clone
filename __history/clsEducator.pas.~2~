@@ -1,0 +1,15 @@
+unit clsEducator;
+
+interface
+
+uses system.sysutils;
+type
+TEducator = class(TObject)
+  public
+
+  private
+
+end;
+implementation
+
+end.

@@ -1,0 +1,53 @@
+unit dm_u;
+
+interface
+
+uses
+  System.SysUtils, System.Classes,db, adodb;
+
+type
+  Tdm = class(TDataModule)
+    procedure DataModuleCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  dm: Tdm;
+   conPAT: TADOConnection;
+  { Copy en pase vir jou tables en rename }
+  tbTable: TADOTable;
+  dscTable: TDataSource;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+procedure Tdm.DataModuleCreate(Sender: TObject);
+begin
+
+    conPAT := TADOConnection.Create(dm);
+    tbTable := TADOTable.Create(dm);
+     dscTable := TDataSource;
+conPAT.Close;
+  conPAT.ConnectionString := 'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=' +
+    ExtractFilePath(ParamStr(0)) + 'PAT.mdb' + '; Persist Security Info=False';
+  conPAT.LoginPrompt := False;
+
+  conPAT.Open;
+
+   //Copy en Paste vir elke tabel. Verander Tabel na jou tabel naam }
+  tbTable.Active := False;
+  tbTable.Connection := conPAT;
+  tbTable.TableName := 'Contact'; // Jou tabel naam in databasis
+  tbTable.Active := true;
+  tbTable.Open;
+  dscTable.DataSet := tbTable;
+
+end;
+
+end.

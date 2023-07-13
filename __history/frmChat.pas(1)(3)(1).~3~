@@ -1,0 +1,59 @@
+unit frmChat;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs,dmPAT_u, Vcl.StdCtrls;
+
+type
+  TfrmChats = class(TForm)
+    Edit1: TEdit;
+    Button1: TButton;
+
+    function Validate(pControl : string) : boolean;
+
+    procedure Button1Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmChats: TfrmChats;
+
+implementation
+uses Pat_u;
+
+{$R *.dfm}
+
+procedure TfrmChats.Button1Click(Sender: TObject);
+begin
+
+   if Validate(Edit1.Text) = false then
+
+
+
+end;
+
+procedure TfrmChats.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+frmMain.Show;
+frmChats.Close;
+end;
+
+function TfrmChats.Validate(pControl : string): boolean;
+begin
+
+if pControl = '' then
+  begin
+   Validate := false
+  end
+  else
+  result := true;
+
+end;
+
+end.

@@ -1,0 +1,8 @@
+Physics Recap Semester 1
+Rule for current flow in generators?~Fleming's Right Hand Rule~Fleming's Left Hand Rule~Coulomb's Rule~Ohm's Rule~
+Unit for momentum?~kg.m/s~m/s~m/s^2~N~
+"Every actions has an equal and opposite reaction"~Newton~Ohm~Tesla~Coulomb~
+On Earth, your mass is?~Measured in kg~Not the same as your mass on the moon~Equal to mass * gravitational acceleration~A vector~
+Which of these formula's are incorrect?~V=RI~W=F.x.cos(theta)~p=mv~Fnet=p/s~
+A picometer is?~1x10^-9~1x10^-6~1x10^-3~1x10^9~
+Feather and canonball are dropped from same height, ignore air resistance. Which will land first?~Both will land at the same time~Feather~Canonball~Not enough information given!~

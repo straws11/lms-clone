@@ -1,0 +1,29 @@
+unit dm_u;
+
+interface
+
+uses
+  System.SysUtils, System.Classes,db, adodb;
+
+type
+  Tdm = class(TDataModule)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  dm: Tdm;
+   conPAT: TADOConnection;
+  { Copy en pase vir jou tables en rename }
+  tbTable: TADOTable;
+  dscTable: TDataSource;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+end.

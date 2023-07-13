@@ -1,0 +1,6 @@
+Software Quiz
+What is webbased software?~Webbased software is not installed on your own computer and can be used with internet access~Webbased software is used to create websites~Webbased software can become outdated~Webbased software is always free~
+Is 2GB RAM sufficient for general users? Why or why not?~No, most modern programs require more RAM to run efficiently alongside other programs~Yes, it is enough~No, not enough storage for most programs~Yes, most powerful programs only use a few KB's of RAM~
+Which of these are used for gathering tabled data for processing?~Excel~Word~Notepad~Internet Explorer~
+How to kill programs that have crashed?~Task Manager~Notepadd++~Windows~Google Chrome~
+Which is not a reason to update software?~To share the software with friends~Apply possible bugfixes~To get newest features~To improve program security that developers have improved~

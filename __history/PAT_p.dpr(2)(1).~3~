@@ -1,0 +1,16 @@
+program PAT_p;
+
+uses
+  Vcl.Forms,
+  PAT_u in 'PAT_u.pas' {frmMain},
+  dmPAT_u in 'dmPAT_u.pas' {dmPAT: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TdmPAT, dmPAT);
+  Application.CreateForm(TfrmMain, frmMain);
+  Application.Run;
+end.
