@@ -440,13 +440,14 @@ end;
 procedure TfrmEducatorHome.btnDeleteQuestionClick(Sender: TObject);
 var
   i: Integer;
+  j: Integer;
+  k: Integer;
 begin//deletes question that was double clicked,
 for i := 0 to 4 do
   begin
     sgQuestions.Cells[i,iEditRow]:='';
   end;
 dec(iQCount);
-iEditRow:=0;
 bEditingQuestion:=false;
 btnDeleteQuestion.Enabled:=false;
 edtCorrect.Clear;
@@ -454,6 +455,24 @@ edtWrong1.Clear;
 edtWrong2.Clear;
 edtWrong3.Clear;
 edtQuestion.Clear;
+
+//shifts up all the other questions to fill the gap
+for j := iEditRow to iQCount do
+  begin//for every question
+    for k := 0 to 4 do
+      begin//for all 5 cells of said question
+        sgQuestions.Cells[k, j] := sgQuestions.Cells[k, j+1];
+      end;
+  end;
+
+//clear last entry (there are two of the last one)
+for i := 0 to 4 do
+  begin
+    sgQuestions.Cells[i, iQCount+1]:= '';
+  end;
+
+iEditRow:=0;
+
 end;
 
 procedure TfrmEducatorHome.btnDeleteQuizClick(Sender: TObject);
